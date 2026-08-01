@@ -7,7 +7,7 @@ import MobileNavbar from './components/MobileNavbar';
 import PremiumHero from './components/PremiumHero';
 import Journey from './components/Journey';
 
-// Project List
+
 const PROJECTS = [
   {
     id: 1,
@@ -167,10 +167,10 @@ export default function App() {
     const handleScroll = () => {
       const sectionIds = ['home', 'about', 'journey', 'projects', 'designs', 'contact'];
       const sectionEls = sectionIds.map(id => document.getElementById(id));
-      
+
       let current = 'home';
       const halfHeight = window.innerHeight / 2;
-      
+
       for (let i = 0; i < sectionEls.length; i++) {
         if (sectionEls[i] && sectionEls[i].getBoundingClientRect().top <= halfHeight) {
           current = sectionIds[i];
@@ -372,15 +372,15 @@ export default function App() {
 
   return (
     <div className="app-container min-h-screen relative font-sans overflow-x-hidden">
-      
+
       {/* Background Ambient Glows */}
       <div className="bg-glow glow-1 fixed top-[-15%] left-[-10%] w-[50vw] h-[50vw] rounded-full pointer-events-none z-0 bg-cyan-900/10 blur-[80px]"></div>
       <div className="bg-glow glow-2 fixed bottom-[-15%] right-[-10%] w-[60vw] h-[60vw] rounded-full pointer-events-none z-0 bg-blue-900/10 blur-[90px]"></div>
       <div className="bg-glow glow-3 fixed top-[40%] right-[10%] w-[30vw] h-[30vw] rounded-full pointer-events-none z-0 bg-indigo-900/5 blur-[70px]"></div>
 
       {/* Floating Header Navbar */}
-      <Navbar 
-        activeSection={activeSection} 
+      <Navbar
+        activeSection={activeSection}
         onLogoClick={handleLogoClick}
       />
 
@@ -466,7 +466,7 @@ export default function App() {
             >
               <h3 className="text-xl font-bold text-white mb-8">Technical Arsenal</h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                
+
                 {/* Prog */}
                 <div className="space-y-4">
                   <h4 className="text-sm font-semibold uppercase tracking-wider text-cyan-400">Languages</h4>
@@ -501,7 +501,6 @@ export default function App() {
                   </div>
                 </div>
 
-                {/* Web Dev */}
                 <div className="space-y-4">
                   <h4 className="text-sm font-semibold uppercase tracking-wider text-cyan-400">Web Development</h4>
                   <div className="space-y-3">
@@ -660,11 +659,10 @@ export default function App() {
               <button
                 key={filter.value}
                 onClick={() => setActiveFilter(filter.value)}
-                className={`filter-pill px-5 py-3 text-xs font-semibold rounded-full border transition-all duration-300 active:scale-95 ${
-                  activeFilter === filter.value
+                className={`filter-pill px-5 py-3 text-xs font-semibold rounded-full border transition-all duration-300 active:scale-95 ${activeFilter === filter.value
                     ? 'bg-cyan-500 border-cyan-500 text-black shadow-lg shadow-cyan-500/20'
                     : 'bg-white/5 border-white/10 text-neutral-400 hover:text-white hover:bg-white/10 hover:border-white/20'
-                }`}
+                  }`}
                 aria-pressed={activeFilter === filter.value}
               >
                 {filter.label}
@@ -877,7 +875,7 @@ export default function App() {
                 {selectedProject.badge}
               </span>
               <h3 className="text-2xl font-bold text-white mb-4">{selectedProject.title}</h3>
-              
+
               <div className="flex flex-wrap gap-1.5 mb-6">
                 {selectedProject.tech.map(t => (
                   <span
@@ -954,7 +952,7 @@ export default function App() {
               <path d="M205.66 194.34a8 8 0 0 1-11.32 11.32L128 139.31l-66.34 66.35a8 8 0 0 1-11.32-11.32L116.69 128 50.34 61.66a8 8 0 0 1 11.32-11.32L128 116.69l66.34-66.35a8 8 0 0 1 11.32 11.32L139.31 128Z" />
             </svg>
           </button>
-          
+
           <div className="relative max-w-4xl max-h-[85vh] overflow-hidden flex flex-col items-center">
             <img
               src={lightboxImage.src}
