@@ -114,6 +114,36 @@ npm run build
 
 ---
 
+## 📝 Changelog
+
+### 🚀 **v3.1.0** — *2026-08-04* (Pixel Edition Release)
+- **Added**: Minecraft-inspired Parchment (`#F7F3E8`), Grass (`#5C8A3A`), Dirt (`#7A4F2B`), Gold (`#E8B33D`), and Stone Ink (`#3D3B38`) color token system.
+- **Added**: Multi-color chromatic glitch hero headline animation featuring dual-layer clip-rect keyframes and animated hue-cycling text shadows.
+- **Added**: Project Inventory Grid with Gold (Featured), Stone (Full-Stack), and Emerald (Labs) rarity tiering system.
+- **Added**: Technical Hotbar skills section displaying proficiency across 10 key tools and languages.
+- **Added**: `PixelIcon` unified icon component leveraging `pixelarticons` font and hand-drawn 16x16 pixel-grid SVGs for social platforms.
+- **Added**: Universal CSS `clip-path` polygon bevel system for pixel-corner buttons, cards, and modal popups.
+- **Fixed**: Hero glitch line-wrapping layout bug by applying `white-space: nowrap` across main text and pseudo-element ghost layers.
+- **Updated**: Top navigation with ZN monogram, gold active tick indicator, and parchment sticky container.
+- **Updated**: Mobile floating nav pill with pixel art icons and gold active tick.
+- **Updated**: Production build optimization (`✓ built in 25.88s`).
+
+### 📦 **v3.0.0** — *2026-06-01* (React & Vite Architecture Migration)
+- **Added**: Complete migration from vanilla static HTML/CSS to React 18 & Vite 5 architecture.
+- **Added**: Liquid Glass 2.0 Apple-inspired glassmorphism system with ambient radial glows.
+- **Added**: Matter.js anti-gravity zero-gravity physics easter egg simulation.
+- **Added**: Bento-grid About Me section and interactive case study project modals.
+
+### 🛠️ **v2.0.0** — *2025-11-15* (Interactive Journey & Lightbox)
+- **Added**: Vertical scrolling journey timeline component.
+- **Added**: Full-screen image lightbox for visual design pubmats gallery.
+- **Added**: Theme preference persistence via `localStorage`.
+
+### 🌱 **v1.0.0** — *2025-04-10* (Initial Release)
+- **Added**: First iteration of personal developer portfolio website.
+
+---
+
 ## 📄 License
 
 This project is open source and available under the [MIT License](LICENSE).
