@@ -1,11 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
 import gsap from 'gsap';
+import PixelIcon from './PixelIcon';
 
 export default function Navbar({ activeSection, onLogoClick }) {
   const [isOpen, setIsOpen] = useState(false);
   const navRef = useRef(null);
-  
-  // Mobile Morph Refs
   const dot1Ref = useRef(null);
   const dot2Ref = useRef(null);
   const dot3Ref = useRef(null);
@@ -13,9 +12,7 @@ export default function Navbar({ activeSection, onLogoClick }) {
   const toggleTextRef = useRef(null);
   const mobileOverlayRef = useRef(null);
 
-  // Desktop Navbar Items Mapping
   const navItems = [
-    { label: 'Home',     href: '#home',     sectionId: 'home'     },
     { label: 'About',    href: '#about',    sectionId: 'about'    },
     { label: 'Journey',  href: '#journey',  sectionId: 'journey'  },
     { label: 'Projects', href: '#projects', sectionId: 'projects' },
@@ -23,15 +20,15 @@ export default function Navbar({ activeSection, onLogoClick }) {
     { label: 'Contact',  href: '#contact',  sectionId: 'contact'  },
   ];
 
-  // 1. Entrance animation on mount
+  // Entrance animation on mount
   useEffect(() => {
     gsap.fromTo(navRef.current,
-      { y: -120, opacity: 0 },
-      { y: 0, opacity: 1, duration: 1.4, ease: 'power3.out', delay: 0.2 }
+      { y: -80, opacity: 0 },
+      { y: 0, opacity: 1, duration: 0.9, ease: 'power3.out', delay: 0.1 }
     );
   }, []);
 
-  // 2. GSAP Dot Grid Morph Animation and Mobile Overlay Transition
+  // Mobile overlay toggle
   useEffect(() => {
     const d1 = dot1Ref.current;
     const d2 = dot2Ref.current;
@@ -43,111 +40,90 @@ export default function Navbar({ activeSection, onLogoClick }) {
     if (!d1 || !d2 || !d3 || !d4) return;
 
     if (isOpen) {
-      // Disable document scrolling when mobile menu is open
       document.body.style.overflow = 'hidden';
 
-      // --- Morph 2x2 dot grid into X ---
-      gsap.to(d1, { x: 3.5, y: 3.5, rotation: 45, width: 14, height: 1.5, borderRadius: '1px', duration: 0.4, ease: 'power3.out' });
-      gsap.to(d4, { x: -3.5, y: -3.5, rotation: 45, width: 14, height: 1.5, borderRadius: '1px', duration: 0.4, ease: 'power3.out' });
-      gsap.to(d2, { x: -3.5, y: 3.5, rotation: -45, width: 14, height: 1.5, borderRadius: '1px', duration: 0.4, ease: 'power3.out' });
-      gsap.to(d3, { x: 3.5, y: -3.5, rotation: -45, width: 14, height: 1.5, borderRadius: '1px', duration: 0.4, ease: 'power3.out' });
+      gsap.to(d1, { x: 3.5, y: 3.5, rotation: 45, width: 14, height: 1.5, borderRadius: '1px', duration: 0.35, ease: 'power3.out' });
+      gsap.to(d4, { x: -3.5, y: -3.5, rotation: 45, width: 14, height: 1.5, borderRadius: '1px', duration: 0.35, ease: 'power3.out' });
+      gsap.to(d2, { x: -3.5, y: 3.5, rotation: -45, width: 14, height: 1.5, borderRadius: '1px', duration: 0.35, ease: 'power3.out' });
+      gsap.to(d3, { x: 3.5, y: -3.5, rotation: -45, width: 14, height: 1.5, borderRadius: '1px', duration: 0.35, ease: 'power3.out' });
 
-      // Smooth slide and morph MENU to CLOSE text
-      gsap.to(textEl, { opacity: 0, x: -10, duration: 0.15, onComplete: () => {
-        textEl.innerText = "CLOSE";
-        gsap.to(textEl, { opacity: 1, x: 0, duration: 0.25, ease: 'power3.out' });
+      gsap.to(textEl, { opacity: 0, x: -8, duration: 0.12, onComplete: () => {
+        textEl.innerText = 'CLOSE';
+        gsap.to(textEl, { opacity: 1, x: 0, duration: 0.2, ease: 'power3.out' });
       }});
 
-      // --- Fade In Fullscreen Mobile Overlay ---
       gsap.fromTo(overlay,
         { opacity: 0, visibility: 'hidden' },
-        { opacity: 1, visibility: 'visible', duration: 0.5, ease: 'power2.out' }
+        { opacity: 1, visibility: 'visible', duration: 0.4, ease: 'power2.out' }
       );
 
-      // Stagger animate mobile nav items
       gsap.fromTo('.mobile-nav-link',
-        { opacity: 0, y: 40, letterSpacing: '0.05em' },
-        { opacity: 1, y: 0, letterSpacing: '0.12em', duration: 0.6, stagger: 0.08, ease: 'power3.out', delay: 0.15 }
+        { opacity: 0, y: 30 },
+        { opacity: 1, y: 0, duration: 0.5, stagger: 0.07, ease: 'power3.out', delay: 0.12 }
       );
-
     } else {
-      // Re-enable document scrolling
       document.body.style.overflow = '';
 
-      // --- Morph X back to 2x2 dot grid ---
-      gsap.to(d1, { x: 0, y: 0, rotation: 0, width: 6, height: 6, borderRadius: '50%', duration: 0.4, ease: 'power3.out' });
-      gsap.to(d4, { x: 0, y: 0, rotation: 0, width: 6, height: 6, borderRadius: '50%', duration: 0.4, ease: 'power3.out' });
-      gsap.to(d2, { x: 0, y: 0, rotation: 0, width: 6, height: 6, borderRadius: '50%', duration: 0.4, ease: 'power3.out' });
-      gsap.to(d3, { x: 0, y: 0, rotation: 0, width: 6, height: 6, borderRadius: '50%', duration: 0.4, ease: 'power3.out' });
+      gsap.to(d1, { x: 0, y: 0, rotation: 0, width: 6, height: 6, borderRadius: '50%', duration: 0.35, ease: 'power3.out' });
+      gsap.to(d4, { x: 0, y: 0, rotation: 0, width: 6, height: 6, borderRadius: '50%', duration: 0.35, ease: 'power3.out' });
+      gsap.to(d2, { x: 0, y: 0, rotation: 0, width: 6, height: 6, borderRadius: '50%', duration: 0.35, ease: 'power3.out' });
+      gsap.to(d3, { x: 0, y: 0, rotation: 0, width: 6, height: 6, borderRadius: '50%', duration: 0.35, ease: 'power3.out' });
 
-      // Smooth slide and morph CLOSE to MENU text
-      gsap.to(textEl, { opacity: 0, x: 10, duration: 0.15, onComplete: () => {
-        textEl.innerText = "MENU";
-        gsap.to(textEl, { opacity: 1, x: 0, duration: 0.25, ease: 'power3.out' });
+      gsap.to(textEl, { opacity: 0, x: 8, duration: 0.12, onComplete: () => {
+        textEl.innerText = 'MENU';
+        gsap.to(textEl, { opacity: 1, x: 0, duration: 0.2, ease: 'power3.out' });
       }});
 
-      // --- Fade Out Mobile Overlay ---
       gsap.to(overlay, {
         opacity: 0,
-        duration: 0.4,
+        duration: 0.3,
         ease: 'power2.inOut',
-        onComplete: () => {
-          overlay.style.visibility = 'hidden';
-        }
+        onComplete: () => { overlay.style.visibility = 'hidden'; }
       });
     }
 
-    return () => {
-      document.body.style.overflow = '';
-    };
+    return () => { document.body.style.overflow = ''; };
   }, [isOpen]);
 
   const handleMobileLinkClick = (e, sectionId) => {
     setIsOpen(false);
-    // Smooth scroll to element
     const el = document.getElementById(sectionId);
     if (el) {
       e.preventDefault();
-      setTimeout(() => {
-        el.scrollIntoView({ behavior: 'smooth' });
-      }, 100);
+      setTimeout(() => { el.scrollIntoView({ behavior: 'smooth' }); }, 100);
     }
   };
 
   return (
     <>
+      {/* ─── Desktop / Sticky Nav ─── */}
       <nav
         ref={navRef}
-        className="fixed top-6 left-1/2 -translate-x-1/2 w-[90%] max-w-5xl z-[1000] rounded-full transition-all duration-300 liquid-glass backdrop-blur-nav py-3 px-6 select-none"
+        className="pixel-nav"
+        aria-label="Main navigation"
       >
-        <div className="flex justify-between items-center w-full">
-          
-          {/* Left Side: Minimal Logo & Brand Text */}
-          <div 
-            onClick={onLogoClick}
-            className="flex items-center gap-3 cursor-pointer group"
-          >
-            <div className="logo-box relative w-8 h-8 rounded-full overflow-hidden flex items-center justify-center border border-white/10 shadow-lg transition-transform duration-500 group-hover:rotate-[360deg]">
-              <img src="/image/zb.svg" alt="Zyron Logo" className="logo-img w-full h-full object-cover" />
-            </div>
-            <span className="text-sm font-semibold tracking-wider text-white uppercase opacity-85 group-hover:opacity-100 transition-opacity">
-              ZYRON NEIL
-            </span>
-          </div>
+        <div className="pixel-nav-inner">
 
-          {/* Center Section: Pill-style Navigation (Desktop Only) */}
-          <div className="hidden md:flex items-center bg-white/5 border border-white/5 rounded-full p-1 gap-1">
+          {/* ZN Monogram */}
+          <a
+            href="#home"
+            onClick={onLogoClick}
+            className="zn-monogram"
+            aria-label="Zyron Neil — home"
+          >
+            ZN
+          </a>
+
+          {/* Center: Desktop nav links */}
+          <div className="hidden md:flex items-center gap-8">
             {navItems.map((item) => {
               const isActive = activeSection === item.sectionId;
               return (
                 <a
                   key={item.label}
                   href={item.href}
-                  className={`relative px-5 py-1.5 rounded-full text-xs font-medium tracking-wide transition-all duration-300 ${
-                    isActive 
-                      ? 'text-white bg-white/10 border border-white/10 shadow-inner' 
-                      : 'text-neutral-400 hover:text-white hover:bg-white/5 border border-transparent'
-                  }`}
+                  className={`nav-link-pixel${isActive ? ' active' : ''}`}
+                  aria-current={isActive ? 'page' : undefined}
                 >
                   {item.label}
                 </a>
@@ -155,37 +131,48 @@ export default function Navbar({ activeSection, onLogoClick }) {
             })}
           </div>
 
-          {/* Right Section: CTA & Mobile Menu Trigger */}
-          <div className="flex items-center gap-4">
-            {/* Live Indicator CTA Button (Desktop Only) */}
+          {/* Right: CTA + mobile toggle */}
+          <div className="flex items-center gap-3">
+            {/* Let's Talk — bevel button (desktop) */}
             <a
               href="#contact"
-              className="hidden sm:flex items-center gap-2.5 px-5 py-2 rounded-full border border-white/10 bg-white/5 hover:bg-white/10 hover:border-white/20 transition-all duration-300 active:scale-95 group shadow-md"
+              className="btn-pixel btn-pixel-primary hidden sm:inline-flex"
+              style={{ padding: '8px 18px', fontSize: '0.8rem' }}
             >
-
-              <span className="text-xs font-semibold text-neutral-300 group-hover:text-white uppercase tracking-wider">
-                Let's Talk
-              </span>
+              <PixelIcon name="mail" aria-hidden="true" style={{ marginRight: '6px' }} /> Let's Talk
             </a>
 
-            {/* Mobile Menu Toggle Pill Button */}
+            {/* Mobile menu toggle */}
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="flex md:hidden items-center gap-2.5 px-4 py-2 rounded-full border border-white/10 bg-white/5 hover:bg-white/10 hover:border-white/20 transition-all duration-300"
-              aria-label="Toggle Menu"
+              className="flex md:hidden items-center gap-2 px-3 py-2"
+              style={{
+                border: '2px solid var(--color-stone-muted)',
+                background: 'transparent',
+                cursor: 'pointer',
+                clipPath: 'polygon(4px 0, calc(100% - 4px) 0, 100% 4px, 100% calc(100% - 4px), calc(100% - 4px) 100%, 4px 100%, 0 calc(100% - 4px), 0 4px)',
+              }}
+              aria-label="Toggle navigation menu"
+              aria-expanded={isOpen}
             >
-              {/* Animated 2x2 Dot Grid Morph Icon */}
               <div className="relative w-4 h-4 flex items-center justify-center">
-                <span ref={dot1Ref} className="absolute left-[2px] top-[2px] w-1.5 h-1.5 bg-white rounded-full origin-center" />
-                <span ref={dot2Ref} className="absolute right-[2px] top-[2px] w-1.5 h-1.5 bg-white rounded-full origin-center" />
-                <span ref={dot3Ref} className="absolute left-[2px] bottom-[2px] w-1.5 h-1.5 bg-white rounded-full origin-center" />
-                <span ref={dot4Ref} className="absolute right-[2px] bottom-[2px] w-1.5 h-1.5 bg-white rounded-full origin-center" />
+                <span ref={dot1Ref} className="absolute left-[2px] top-[2px] w-1.5 h-1.5 rounded-full origin-center" style={{ background: 'var(--color-stone-ink)' }} />
+                <span ref={dot2Ref} className="absolute right-[2px] top-[2px] w-1.5 h-1.5 rounded-full origin-center" style={{ background: 'var(--color-stone-ink)' }} />
+                <span ref={dot3Ref} className="absolute left-[2px] bottom-[2px] w-1.5 h-1.5 rounded-full origin-center" style={{ background: 'var(--color-stone-ink)' }} />
+                <span ref={dot4Ref} className="absolute right-[2px] bottom-[2px] w-1.5 h-1.5 rounded-full origin-center" style={{ background: 'var(--color-stone-ink)' }} />
               </div>
-              
-              {/* Menu / Close Text */}
               <span
                 ref={toggleTextRef}
-                className="text-[10px] font-bold tracking-widest text-neutral-300 uppercase w-10 text-center"
+                style={{
+                  fontFamily: 'var(--font-mono)',
+                  fontSize: '0.6rem',
+                  fontWeight: 700,
+                  letterSpacing: '0.12em',
+                  color: 'var(--color-stone-muted)',
+                  textTransform: 'uppercase',
+                  width: '2.5rem',
+                  textAlign: 'center',
+                }}
               >
                 MENU
               </span>
@@ -195,45 +182,46 @@ export default function Navbar({ activeSection, onLogoClick }) {
         </div>
       </nav>
 
-      {/* Fullscreen Mobile Cinematic Overlay Menu */}
+      {/* ─── Mobile Fullscreen Overlay ─── */}
       <div
         ref={mobileOverlayRef}
-        className="fixed inset-0 w-full h-full z-[990] flex items-center justify-center bg-black/90 backdrop-blur-2xl border-none opacity-0 invisible transition-all duration-500"
+        className="mobile-nav-overlay fixed inset-0 w-full h-full z-[990] flex items-center justify-center opacity-0 invisible"
+        style={{ background: 'var(--color-parchment)' }}
+        aria-hidden={!isOpen}
       >
-        {/* Soft Radial Ambient Gradients */}
-        <div className="absolute inset-0 bg-gradient-to-tr from-cyan-950/20 via-transparent to-blue-950/20 pointer-events-none" />
-        <div className="absolute w-[80vw] h-[80vw] bg-lime-accent/5 rounded-full blur-[100px] pointer-events-none top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
+        {/* Subtle pixel accent lines */}
+        <div style={{
+          position: 'absolute', top: 0, left: 0, right: 0,
+          height: '4px',
+          background: 'linear-gradient(to right, var(--color-grass), var(--color-dirt))',
+        }} />
 
-        {/* Large Centered Navigation Items */}
-        <div className="relative z-10 flex flex-col items-center gap-6 max-h-[80vh] overflow-y-auto w-full px-8 py-12">
-          {navItems.map((item, idx) => {
+        <div className="relative z-10 flex flex-col items-center gap-8 w-full px-8 py-16">
+          {navItems.map((item) => {
             const isActive = activeSection === item.sectionId;
             return (
               <a
                 key={item.label}
                 href={item.href}
                 onClick={(e) => handleMobileLinkClick(e, item.sectionId)}
-                className={`mobile-nav-link text-3xl sm:text-4xl font-extrabold uppercase transition-all duration-300 ${
-                  isActive
-                    ? 'text-white drop-shadow-[0_0_15px_rgba(255,255,255,0.4)]'
-                    : 'text-neutral-500 hover:text-neutral-200 hover:scale-105'
-                }`}
+                className={`mobile-nav-link text-4xl font-semibold uppercase tracking-wide transition-all duration-200${isActive ? ' active' : ''}`}
+                style={{ fontFamily: 'var(--font-display)' }}
               >
                 {item.label}
               </a>
             );
           })}
 
-          {/* Social Links on mobile menu */}
-          <div className="flex gap-6 mt-12 mobile-nav-link opacity-0">
-            <a href="mailto:zyronneilbautista10@gmail.com" className="text-neutral-500 hover:text-white transition-colors duration-300">
-              <i className="ph ph-envelope text-xl"></i>
+          {/* Social icons */}
+          <div className="flex gap-6 mt-8 mobile-nav-link opacity-0">
+                          <a href="mailto:zyronneilbautista10@gmail.com" style={{ color: 'var(--color-stone-muted)' }} className="hover:text-grass transition-colors" aria-label="Email">
+              <PixelIcon name="mail" />
             </a>
-            <a href="https://github.com/ZyronNeil2007" target="_blank" rel="noopener noreferrer" className="text-neutral-500 hover:text-white transition-colors duration-300">
-              <i className="ph ph-github-logo text-xl"></i>
+            <a href="https://github.com/ZyronNeil2007" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-stone-muted)' }} aria-label="GitHub">
+              <PixelIcon name="github" />
             </a>
-            <a href="https://www.instagram.com/zyronnei10/" target="_blank" rel="noopener noreferrer" className="text-neutral-500 hover:text-white transition-colors duration-300">
-              <i className="ph ph-instagram-logo text-xl"></i>
+            <a href="https://www.instagram.com/zyronnei10/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-stone-muted)' }} aria-label="Instagram">
+              <PixelIcon name="instagram" />
             </a>
           </div>
         </div>

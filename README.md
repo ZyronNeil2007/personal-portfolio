@@ -1,6 +1,6 @@
-# 🌟 Zyron Neil Bautista — Personal Portfolio
+# ⚔️ Zyron Neil Bautista — Personal Portfolio v3.1.0 (Pixel Edition)
 
-> A personal portfolio website showcasing my projects, skills, and background as a CS student and creative developer.
+> A clean, modern portfolio first and pixel-art homage second. Built with React, Vite, Tailwind CSS, and custom pixel-corner architecture.
 
 ![Portfolio Preview](./Gemini_Generated_Image_fnpzccfnpzccfnpz_.png)
 
@@ -8,99 +8,92 @@
 
 ## 🔗 Live Site
 
-**[Neils Personal Portfolio](https://personalporfolioneil.netlify.app/)** — hosted on GitHub Pages 
+**[Zyron Neil's Personal Portfolio](https://personalporfolioneil.netlify.app/)** — hosted on GitHub Pages & Netlify
 
 ---
 
-## ✨ Features
+## ✨ Features (v3.1.0 Pixel Overhaul)
 
-- **Hero Section** — Animated typewriter effect with a profile image and call-to-action buttons
-- **About Section** — Bento-grid layout with an intro, skills, what I do, and fun facts
-- **Journey Timeline** — An interactive, scrolling timeline outlining my path from 2019 to Present
-- **Skills Progress Bars** — Animated skill level indicators tracking technical proficiency
-- **Projects Section** — Card-based project showcase with tech tags and a category **filtering system**
-- **Visual Design Gallery** — A CSS Masonry grid for pubmats and layouts with an integrated **lightbox**
-- **Case Study Modals** — Clickable project cards that open detailed, frosted-glass modals
-- **Contact Section** — Simple, focused call-to-action with email link
-- **Theme Toggle** — Light/Dark mode with preference persistence via `localStorage`
-- **Liquid Glass 2.0 UI** — High-fidelity Apple-inspired glassmorphism with `backdrop-filter: blur(24px)`, specular edge highlights, and 28px squircle geometry.
-- **Adaptive Theme Glass** — Specialized glass physics for Light Mode (carved/etched look) and Dark Mode (glowing/frosted look).
-- **Scroll Reveal Animations** — Elements animate in using `IntersectionObserver`.
-- **3D Tilt Effect** — Vanilla JS mouse-tracking perspective transforms on bento boxes and project cards.
-- **Matter.js Easter Egg** — A hidden anti-gravity physics simulation (click the logo 3 times to trigger!).
-- **Floating Tab Bar** — Mobile-friendly bottom navigation.
-- **Fully Responsive** — Adapts to mobile, tablet, and desktop viewports.
+- **🎨 Parchment & Earth Pixel Aesthetic** — Warm parchment canvas (`#F7F3E8`) with Minecraft-inspired grass (`#5C8A3A`), dirt (`#7A4F2B`), gold (`#E8B33D`), and stone ink (`#3D3B38`) color palette.
+- **⚡ Multi-Color Chromatic Glitch Hero** — Dual-layer clip-rect glitch animation on the hero typewriter title with multi-hue text-shadow cycling (`Pixelify Sans`).
+- **📦 Project Inventory Grid** — Signature 8-slot hotbar project view with rarity-based color borders:
+  - 👑 **Gold Border & Badge**: Featured Core Projects
+  - 🪨 **Stone Border & Badge**: Full-Stack / Standard Projects
+  - 💎 **Emerald Border & Badge**: Experimental / Labs
+- **🎯 Pixel Hotbar Skills Arsenal** — Stepped pixel slots displaying technical proficiency across HTML, CSS, JS, React, Python, Java, C++, MySQL, Git, and Figma.
+- **👾 100% Pixel Art Icons** — Integrated `pixelarticons` font system alongside hand-crafted 16x16 pixel grid SVGs for social platforms (GitHub, Instagram, Facebook, TikTok).
+- **🌿 Grass-to-Dirt Timeline Spine** — Vertical journey cards with stepped pixel corners and grass-to-dirt gradient connector path.
+- **🌌 Sticky Sky-Scroll Experience** — Parallax scrolling transition into sky-blue project & journey environments (`#CFE8F5`).
+- **🖼️ Case Study Modals & Lightbox** — Interactive pixel-corner popups with deep dive insights and full-screen image lightbox.
+- **📱 Pixel Mobile Navigation** — Bottom floating pill navigation with active gold tick indicator and pixel FAB search button.
+- **☄️ Matter.js Anti-Gravity Easter Egg** — Click logo 3 times to trigger interactive zero-gravity physics!
 
 ---
 
-## 🛠️ Tech Stack
+## 🛠️ Tech Stack & Typography
 
 | Layer | Technology |
 |---|---|
-| Framework | [React](https://reactjs.org/) & [Vite](https://vitejs.dev/) |
-| Styling | [Tailwind CSS](https://tailwindcss.com/) & CSS Modules |
-| Logic | JavaScript (ES6+) |
-| Physics | [Matter.js](https://brm.io/matter-js/) |
-| Icons | [Phosphor Icons](https://phosphoricons.com/) |
-| Fonts | [Inter — Google Fonts](https://fonts.google.com/specimen/Inter) |
+| **Framework** | [React 18](https://reactjs.org/) & [Vite 5](https://vitejs.dev/) |
+| **Styling** | [Tailwind CSS 3](https://tailwindcss.com/) & Custom Pixel Tokens |
+| **Icons** | [pixelarticons](https://pixelarticons.com/) & Custom 16x16 Pixel SVGs |
+| **Headings Font** | [Pixelify Sans — Google Fonts](https://fonts.google.com/specimen/Pixelify+Sans) |
+| **Body Font** | [Inter — Google Fonts](https://fonts.google.com/specimen/Inter) |
+| **Code / Tags Font** | [Space Mono — Google Fonts](https://fonts.google.com/specimen/Space+Mono) |
+| **Physics / Motion** | [Matter.js](https://brm.io/matter-js/) & [GSAP](https://gsap.com/) |
 
-> Migrated to React and Tailwind CSS in v3.0.0 for improved modularity and developer experience.
+---
+
+## 🎨 Design System
+
+```css
+/* Color Tokens */
+--color-parchment:   #F7F3E8;   /* Main canvas background */
+--color-grass:       #5C8A3A;   /* Primary accent */
+--color-grass-deep:  #3E6B27;   /* Deep accent */
+--color-dirt:        #7A4F2B;   /* Secondary accent */
+--color-gold:        #E8B33D;   /* Highlight / Rarity */
+--color-stone-ink:   #3D3B38;   /* Primary text / Borders */
+--color-stone-muted: #928E86;   /* Secondary text */
+--color-sky:         #CFE8F5;   /* Secondary canvas bg */
+```
+
+### Pixel Corner Clip-Path Formula
+```css
+clip-path: polygon(
+  6px 0, calc(100% - 6px) 0, 100% 6px,
+  100% calc(100% - 6px), calc(100% - 6px) 100%,
+  6px 100%, 0 calc(100% - 6px), 0 6px
+);
+```
 
 ---
 
 ## 📁 Project Structure
 
 ```
-my-portfolio/
-├── index.html          # Entry HTML
+zyron-portfolio/
+├── index.html          # Entry HTML + Google Fonts preconnect
 ├── src/                # React source code
 │   ├── components/     # Reusable React components
-│   ├── App.jsx         # Main application component
-│   └── main.jsx        # Entry point
-├── package.json        # Dependencies and scripts
-└── README.md           # This file
+│   │   ├── Navbar.jsx        # Parchment top nav with ZN logo
+│   │   ├── PremiumHero.jsx   # Multi-color glitch hero
+│   │   ├── Journey.jsx       # Sky-blue timeline section
+│   │   ├── MobileNavbar.jsx  # Floating bottom pixel pill
+│   │   ├── PixelIcon.jsx     # Pixel icon manager & SVG renderer
+│   │   └── StickyScroll.jsx  # Parallax hero scroll transition
+│   ├── App.jsx         # Inventory grid, Hotbar skills, Bento About & Contact
+│   ├── index.css       # Design tokens, pixel corner utilities & glitch keyframes
+│   └── main.jsx        # Entry point + pixelarticons font import
+├── package.json        # v3.1.0 dependencies
+└── README.md           # Documentation
 ```
-
----
-
-## 🎨 Design Highlights
-
-- **Liquid Glass 2.0** — Replaced legacy gradients with high-fidelity backdrop blurs and layered inset box-shadows for realistic specular reflection.
-- **Squircle Geometry** — 28px border-radius applied across all containers for a smooth, premium Apple-like feel.
-- **Theme-Specific Speculars** — Light mode features a "carved" dark specular highlight, while dark mode uses a vibrant white light-catch.
-- **Universal Glass System** — Cohesive styling applied to bento boxes, buttons, pills, tags, and even media screenshots.
-- **Ambient Background Glows** — Fixed, blurred radial shapes that shift based on the current theme.
-- **Dynamic 3D Tilting** — Interactive perspective transforms that respond seamlessly to mouse movement.
-
----
-
-## ⚡ Performance Optimizations
-
-- Scroll handler throttled via `requestAnimationFrame` (max 60fps)
-- `passive: true` on scroll listeners for compositor-thread scrolling
-- Liquid Glass SVG filters cached in a `Map` — never regenerated for the same dimensions
-- `transform: translateZ(0)` on fixed/glass elements to promote GPU compositor layers
-- `IntersectionObserver` for scroll-reveal (zero scroll event cost)
-- `will-change` hints on animated elements
-
----
-
-## 🗂️ Sections
-
-| Section | Description |
-|---|---|
-| **Home** | Hero with typewriter intro and profile image |
-| **About** | Who I am, what I do, technical skills, and fun facts |
-| **My Journey** | A vertical scrolling timeline of my tech & creative eras |
-| **Projects** | Filterable portfolio of selected web systems |
-| **Visual Design** | Masonry gallery of posters, pubmats, and layouts |
-| **Contact** | Email CTA — *"Let's build something great."* |
 
 ---
 
 ## 🚀 Getting Started
 
-First, ensure you have [Node.js](https://nodejs.org/) installed.
+Ensure you have [Node.js](https://nodejs.org/) (v18+) installed.
 
 ```bash
 # Clone the repository
@@ -112,28 +105,17 @@ cd personal-portfolio
 # Install dependencies
 npm install
 
-# Start the development server
+# Start development server
 npm run dev
+
+# Build for production
+npm run build
 ```
-
----
-
-## 📬 Contact
-
-| Platform | Link |
-|---|---|
-| ✉️ Email | [zyronneilbautista10@gmail.com](mailto:zyronneilbautista10@gmail.com) |
-| 📘 Facebook | [facebook.com/share/18ZFsaeo4S](https://www.facebook.com/share/18ZFsaeo4S/) |
-| 📸 Instagram | [@zyronnei10](https://www.instagram.com/zyronnei10/) |
-| 🎵 TikTok | [@zyron_neil](https://www.tiktok.com/@zyron_neil) |
-| 🐙 GitHub | [ZyronNeil2007](https://github.com/ZyronNeil2007) |
 
 ---
 
 ## 📄 License
 
 This project is open source and available under the [MIT License](LICENSE).
-
----
 
 <p align="center">Designed & Developed by <strong>Zyron Neil Bautista</strong> © 2026</p>

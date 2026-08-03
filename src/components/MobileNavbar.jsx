@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './MobileNavbar.css';
+import PixelIcon from './PixelIcon';
 
 export default function MobileNavbar({ activeSection }) {
   const handleMouseMove = (e) => {
@@ -15,29 +16,29 @@ export default function MobileNavbar({ activeSection }) {
       <div className="bottom-nav-backdrop"></div>
       <div className="apple-bottom-nav">
         <div className="nav-pill liquid-glass" onMouseMove={handleMouseMove}>
-          <a href="#home" className={`apple-nav-link ${activeSection === 'home' ? 'active' : ''}`} aria-label="Home">
-            <i className="ph ph-house"></i>
+                    <a href="#home" className={`apple-nav-link ${activeSection === 'home' ? 'active' : ''}`} aria-label="Home">
+            <PixelIcon name="home" />
             <span>Home</span>
           </a>
           <a href="#about" className={`apple-nav-link ${activeSection === 'about' ? 'active' : ''}`} aria-label="About">
-            <i className="ph ph-user"></i>
+            <PixelIcon name="user" />
             <span>About</span>
           </a>
           <a href="#projects" className={`apple-nav-link ${activeSection === 'projects' ? 'active' : ''}`} aria-label="Projects">
-            <i className="ph ph-stack"></i>
+            <PixelIcon name="layers" />
             <span>Work</span>
           </a>
           <a href="#designs" className={`apple-nav-link ${activeSection === 'designs' ? 'active' : ''}`} aria-label="Visual Design Gallery">
-            <i className="ph ph-images"></i>
+            <PixelIcon name="images" />
             <span>Designs</span>
           </a>
           <a href="#contact" className={`apple-nav-link ${activeSection === 'contact' ? 'active' : ''}`} aria-label="Contact">
-            <i className="ph ph-envelope"></i>
+            <PixelIcon name="mail" />
             <span>Contact</span>
           </a>
         </div>
-        <button className="nav-fab liquid-glass" onMouseMove={handleMouseMove} aria-label="Search">
-          <i className="ph ph-magnifying-glass"></i>
+                <button className="nav-fab" onMouseMove={handleMouseMove} aria-label="Search">
+          <PixelIcon name="search" />
         </button>
       </div>
     </div>
