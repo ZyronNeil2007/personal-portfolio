@@ -303,7 +303,7 @@ export default function App() {
         style={{
           minHeight: '100dvh', display: 'flex', alignItems: 'center',
           justifyContent: 'center', position: 'relative', zIndex: 10,
-          textAlign: 'center', background: 'var(--color-parchment)',
+          textAlign: 'center', background: 'var(--mc-bg)',
         }}
       >
         <p style={{
@@ -312,7 +312,7 @@ export default function App() {
           fontWeight: 700,
           letterSpacing: '0.18em',
           textTransform: 'uppercase',
-          color: 'var(--color-stone-muted)',
+          color: 'var(--mc-green)',
           margin: 0,
         }}>
           Welcome to my Portfolio Website
@@ -331,7 +331,7 @@ export default function App() {
           id="about"
           aria-label="About Me"
           style={{
-            background: 'var(--color-parchment)',
+            background: 'var(--mc-bg-mid)',
             padding: '5rem 0',
           }}
         >
@@ -340,7 +340,7 @@ export default function App() {
             {/* Header */}
             <div data-aos="fade-up" style={{ marginBottom: '2.5rem' }}>
               <span className="section-label">Who I Am</span>
-              <h2 className="section-title">About Me</h2>
+              <h2 className="section-title" style={{ color: 'var(--mc-text)' }}>About Me</h2>
               <div className="section-grass-bar" />
             </div>
 
@@ -354,13 +354,13 @@ export default function App() {
                 className="bento-box col-span-1 md:col-span-8"
                 style={{ padding: '2rem' }}
               >
-                <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.25rem', fontWeight: 600, color: 'var(--color-stone-ink)', marginBottom: '12px' }}>
+                <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.25rem', fontWeight: 600, color: 'var(--mc-text)', marginBottom: '12px' }}>
                   Who I Am
                 </h3>
-                <p style={{ fontFamily: 'var(--font-body)', fontSize: '1rem', lineHeight: 1.7, color: 'var(--color-stone-ink)', marginBottom: '12px', opacity: 0.85 }}>
+                <p style={{ fontFamily: 'var(--font-body)', fontSize: '1rem', lineHeight: 1.7, color: 'var(--mc-text-2)', marginBottom: '12px' }}>
                   I'm a passionate tech enthusiast pursuing my degree in Computer Science. I enjoy turning complex ideas into real, functional systems — whether it's a web application, a database-driven dashboard, or a creative UI.
                 </p>
-                <p style={{ fontFamily: 'var(--font-body)', fontSize: '1rem', lineHeight: 1.7, color: 'var(--color-stone-ink)', opacity: 0.85, margin: 0 }}>
+                <p style={{ fontFamily: 'var(--font-body)', fontSize: '1rem', lineHeight: 1.7, color: 'var(--mc-text-2)', margin: 0 }}>
                   Outside of writing code, I enjoy design layouting, storytelling, and digital publications. My ultimate goal is to evolve as a versatile Software Engineer and continue crafting premium interfaces that combine speed with visual elegance.
                 </p>
               </div>
@@ -374,7 +374,7 @@ export default function App() {
                 className="bento-box col-span-1 md:col-span-4"
                 style={{ padding: '2rem' }}
               >
-                <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.25rem', fontWeight: 600, color: 'var(--color-stone-ink)', marginBottom: '16px' }}>
+                <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.25rem', fontWeight: 600, color: 'var(--mc-text)', marginBottom: '16px' }}>
                   What I Do
                 </h3>
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '14px' }}>
@@ -386,14 +386,14 @@ export default function App() {
                     <li key={text} style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
                       <div style={{
                         width: '32px', height: '32px', flexShrink: 0,
-                        background: 'rgba(92,138,58,0.12)',
-                        border: '2px solid var(--color-grass)',
+                        background: 'rgba(98,184,20,0.10)',
+                        border: '1px solid rgba(98,184,20,0.4)',
                         display: 'flex', alignItems: 'center', justifyContent: 'center',
                         clipPath: 'polygon(4px 0, calc(100% - 4px) 0, 100% 4px, 100% calc(100% - 4px), calc(100% - 4px) 100%, 4px 100%, 0 calc(100% - 4px), 0 4px)',
                       }}>
-                                                <PixelIcon name={icon} style={{ color: 'var(--color-grass-deep)', fontSize: '0.9rem' }} />
+                        <PixelIcon name={icon} style={{ color: 'var(--mc-green)', fontSize: '0.9rem' }} />
                       </div>
-                      <span style={{ fontFamily: 'var(--font-body)', fontSize: '0.9rem', fontWeight: 500, color: 'var(--color-stone-ink)' }}>{text}</span>
+                      <span style={{ fontFamily: 'var(--font-body)', fontSize: '0.9rem', fontWeight: 500, color: 'var(--mc-text-2)' }}>{text}</span>
                     </li>
                   ))}
                 </ul>
@@ -406,7 +406,7 @@ export default function App() {
                 className="bento-box col-span-1 md:col-span-12"
                 style={{ padding: '2rem' }}
               >
-                <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.25rem', fontWeight: 600, color: 'var(--color-stone-ink)', marginBottom: '20px' }}>
+                <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.25rem', fontWeight: 600, color: 'var(--mc-text)', marginBottom: '20px' }}>
                   Technical Arsenal
                 </h3>
 
@@ -420,7 +420,7 @@ export default function App() {
                       role="img"
                       aria-label={skill.name}
                     >
-                                            <PixelIcon name={skill.icon} style={{ fontSize: '1.3rem', color: 'var(--color-grass-deep)' }} />
+                      <PixelIcon name={skill.icon} style={{ fontSize: '1.3rem', color: 'var(--mc-green)' }} />
                       <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.5rem', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: 'var(--color-stone-muted)' }}>
                         {skill.name}
                       </span>
@@ -437,18 +437,18 @@ export default function App() {
                     { label: 'Design', items: [{ n: 'Layout Design', v: 85 }, { n: 'Branding & Pubmats', v: 80 }, { n: 'UI Design', v: 75 }] },
                   ].map(({ label, items }) => (
                     <div key={label}>
-                      <h4 style={{ fontFamily: 'var(--font-mono)', fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--color-grass-deep)', marginBottom: '12px' }}>
+                      <h4 style={{ fontFamily: 'var(--font-mono)', fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--mc-green)', marginBottom: '12px' }}>
                         {label}
                       </h4>
                       <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
                         {items.map(({ n, v }) => (
                           <div key={n}>
-                            <div style={{ display: 'flex', justifyContent: 'space-between', fontFamily: 'var(--font-body)', fontSize: '0.8rem', fontWeight: 600, color: 'var(--color-stone-ink)', marginBottom: '4px' }}>
+                            <div style={{ display: 'flex', justifyContent: 'space-between', fontFamily: 'var(--font-body)', fontSize: '0.8rem', fontWeight: 600, color: 'var(--mc-text-2)', marginBottom: '4px' }}>
                               <span>{n}</span>
-                              <span style={{ fontFamily: 'var(--font-mono)', color: 'var(--color-stone-muted)' }}>{v}%</span>
+                              <span style={{ fontFamily: 'var(--font-mono)', color: 'var(--mc-text-muted)' }}>{v}%</span>
                             </div>
-                            <div style={{ width: '100%', height: '6px', background: 'rgba(146,142,134,0.2)', border: '1px solid var(--color-stone-muted)' }}>
-                              <div style={{ width: `${v}%`, height: '100%', background: 'linear-gradient(to right, var(--color-grass-deep), var(--color-grass))', transition: 'width 1s ease' }} />
+                            <div style={{ width: '100%', height: '6px', background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.10)' }}>
+                              <div style={{ width: `${v}%`, height: '100%', background: 'linear-gradient(to right, var(--mc-green-deep), var(--mc-green))', transition: 'width 1s ease' }} />
                             </div>
                           </div>
                         ))}
@@ -465,7 +465,7 @@ export default function App() {
                 className="bento-box col-span-1 md:col-span-12"
                 style={{ padding: '2rem' }}
               >
-                <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.25rem', fontWeight: 600, color: 'var(--color-stone-ink)', marginBottom: '16px' }}>
+                <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.25rem', fontWeight: 600, color: 'var(--mc-text)', marginBottom: '16px' }}>
                   Behind the Code
                 </h3>
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
@@ -482,8 +482,8 @@ export default function App() {
                         padding: '6px 14px',
                         fontSize: '0.8rem',
                         gap: '6px',
-                        color: 'var(--color-stone-ink)',
-                        borderColor: 'var(--color-stone-muted)',
+                        color: 'var(--mc-text-2)',
+                        borderColor: 'var(--mc-border-hover)',
                         fontFamily: 'var(--font-body)',
                         clipPath: 'polygon(5px 0, calc(100% - 5px) 0, 100% 5px, 100% calc(100% - 5px), calc(100% - 5px) 100%, 5px 100%, 0 calc(100% - 5px), 0 5px)',
                         display: 'inline-flex',
@@ -510,14 +510,14 @@ export default function App() {
         <section
           id="projects"
           aria-label="Selected Work — Inventory"
-          style={{ background: 'var(--color-parchment)', padding: '5rem 0' }}
+          style={{ background: 'var(--mc-bg)', padding: '5rem 0' }}
         >
           <div style={{ maxWidth: 'var(--container-max)', margin: '0 auto', padding: '0 24px' }}>
 
             {/* Header */}
             <div data-aos="fade-up" style={{ marginBottom: '2rem' }}>
               <span className="section-label">Inventory</span>
-              <h2 className="section-title">Selected Work</h2>
+              <h2 className="section-title" style={{ color: 'var(--mc-text)' }}>Selected Work</h2>
               <div className="section-grass-bar" />
             </div>
 
@@ -605,10 +605,10 @@ export default function App() {
                             onClick={(e) => e.stopPropagation()}
                             style={{
                               width: '28px', height: '28px',
-                              background: 'var(--color-parchment)',
-                              border: '2px solid var(--color-stone-ink)',
+                              background: 'rgba(255,255,255,0.10)',
+                              border: '1px solid rgba(255,255,255,0.2)',
                               display: 'flex', alignItems: 'center', justifyContent: 'center',
-                              color: 'var(--color-stone-ink)', fontSize: '0.85rem',
+                              color: 'var(--mc-text)', fontSize: '0.85rem',
                             }}
                             title="View Source"
                             aria-label={`${project.title} source code`}
@@ -624,10 +624,10 @@ export default function App() {
                             onClick={(e) => e.stopPropagation()}
                             style={{
                               width: '28px', height: '28px',
-                              background: 'var(--color-grass-deep)',
-                              border: '2px solid var(--color-stone-ink)',
+                              background: 'var(--mc-green)',
+                              border: '1px solid var(--mc-green)',
                               display: 'flex', alignItems: 'center', justifyContent: 'center',
-                              color: 'var(--color-parchment)', fontSize: '0.85rem',
+                              color: '#fff', fontSize: '0.85rem',
                             }}
                             title="Live Demo"
                             aria-label={`${project.title} live demo`}
@@ -644,7 +644,7 @@ export default function App() {
                         fontFamily: 'var(--font-display)',
                         fontSize: '1rem',
                         fontWeight: 600,
-                        color: 'var(--color-stone-ink)',
+                        color: 'var(--mc-text)',
                         margin: '0 0 6px',
                         letterSpacing: '0.02em',
                       }}>
@@ -654,7 +654,7 @@ export default function App() {
                         fontFamily: 'var(--font-body)',
                         fontSize: '0.8rem',
                         lineHeight: 1.6,
-                        color: 'var(--color-stone-muted)',
+                        color: 'var(--mc-text-muted)',
                         margin: '0 0 10px',
                         display: '-webkit-box',
                         WebkitLineClamp: 2,
@@ -672,7 +672,7 @@ export default function App() {
 
                     {/* Hover tooltip */}
                     <div className="slot-tooltip" aria-hidden="true">
-                      <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.75rem', margin: '0 0 8px', lineHeight: 1.5 }}>
+                      <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.75rem', margin: '0 0 8px', lineHeight: 1.5, color: 'var(--mc-text-2)' }}>
                         {project.desc}
                       </p>
                       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '4px', marginBottom: '8px' }}>
@@ -680,12 +680,12 @@ export default function App() {
                           <span key={t} style={{
                             fontFamily: 'var(--font-mono)', fontSize: '0.6rem', fontWeight: 700,
                             letterSpacing: '0.08em', textTransform: 'uppercase',
-                            padding: '2px 6px', border: '1px solid rgba(247,243,232,0.3)',
-                            color: 'rgba(247,243,232,0.8)',
+                            padding: '2px 6px', border: '1px solid rgba(98,184,20,0.3)',
+                            color: 'var(--mc-green-bright)',
                           }}>{t}</span>
                         ))}
                       </div>
-                      <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.7rem', fontWeight: 700, color: 'var(--color-gold)', letterSpacing: '0.04em' }}>
+                      <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.7rem', fontWeight: 700, color: 'var(--mc-gold)', letterSpacing: '0.04em' }}>
                         View → (click)
                       </span>
                     </div>
@@ -760,7 +760,7 @@ export default function App() {
         <section
           id="contact"
           aria-label="Contact"
-          style={{ background: 'var(--color-parchment)', padding: '6rem 0', textAlign: 'center' }}
+          style={{ background: 'var(--mc-bg-mid)', padding: '6rem 0', textAlign: 'center' }}
         >
           <div style={{ maxWidth: '640px', margin: '0 auto', padding: '0 24px' }}>
 
@@ -768,14 +768,14 @@ export default function App() {
             <div
               data-aos="zoom-in"
               style={{
-                display: 'inline-flex', width: '56px', height: '56px',
-                border: '3px solid var(--color-stone-ink)',
-                boxShadow: 'var(--shadow-pixel-md)',
+                display: 'inline-flex', width: '64px', height: '64px',
+                border: '1px solid rgba(98,184,20,0.4)',
+                boxShadow: '0 0 24px rgba(98,184,20,0.2)',
                 alignItems: 'center', justifyContent: 'center',
-                color: 'var(--color-grass-deep)',
-                background: 'var(--color-parchment)',
+                color: 'var(--mc-green)',
+                background: 'rgba(98,184,20,0.08)',
                 marginBottom: '24px',
-                fontSize: '1.5rem',
+                fontSize: '1.8rem',
                 clipPath: 'polygon(8px 0, calc(100% - 8px) 0, 100% 8px, 100% calc(100% - 8px), calc(100% - 8px) 100%, 8px 100%, 0 calc(100% - 8px), 0 8px)',
               }}
             >
@@ -786,16 +786,16 @@ export default function App() {
               data-aos="fade-up"
               style={{
                 fontFamily: 'var(--font-display)',
-                fontSize: 'clamp(2rem, 5vw, 3rem)',
-                fontWeight: 600,
+                fontSize: 'clamp(2rem, 5vw, 3.2rem)',
+                fontWeight: 700,
                 letterSpacing: '0.02em',
-                color: 'var(--color-stone-ink)',
+                color: 'var(--mc-text)',
                 margin: '0 0 16px',
-                lineHeight: 1.2,
+                lineHeight: 1.15,
               }}
             >
               Let's build something{' '}
-              <span style={{ color: 'var(--color-grass-deep)' }}>great.</span>
+              <span style={{ color: 'var(--mc-green)' }}>great.</span>
             </h2>
 
             <p
@@ -805,8 +805,7 @@ export default function App() {
                 fontFamily: 'var(--font-body)',
                 fontSize: '1rem',
                 lineHeight: 1.7,
-                color: 'var(--color-stone-ink)',
-                opacity: 0.8,
+                color: 'var(--mc-text-2)',
                 maxWidth: '44ch',
                 margin: '0 auto 32px',
               }}
@@ -839,13 +838,15 @@ export default function App() {
           }}
         >
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-            <span style={{ fontFamily: 'var(--font-display)', fontSize: '1.3rem', fontWeight: 700, color: 'var(--color-grass-deep)', letterSpacing: '0.04em' }}>ZN</span>
-            <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--color-stone-muted)' }}>
+            <div style={{ width: '26px', height: '26px', background: 'var(--mc-green)', display: 'flex', alignItems: 'center', justifyContent: 'center', clipPath: 'polygon(4px 0, calc(100% - 4px) 0, 100% 4px, 100% calc(100% - 4px), calc(100% - 4px) 100%, 4px 100%, 0 calc(100% - 4px), 0 4px)', boxShadow: '0 0 10px rgba(98,184,20,0.3)' }}>
+              <span style={{ fontFamily: 'var(--font-display)', fontSize: '0.7rem', fontWeight: 700, color: '#000' }}>ZN</span>
+            </div>
+            <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--mc-text-muted)' }}>
               Zyron Neil
             </span>
           </div>
 
-          <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.7rem', color: 'var(--color-stone-muted)', letterSpacing: '0.06em', margin: 0 }}>
+          <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.7rem', color: 'var(--mc-text-muted)', letterSpacing: '0.06em', margin: 0 }}>
             © {new Date().getFullYear()} Designed &amp; Developed by Zyron Neil.
           </p>
 
@@ -878,8 +879,8 @@ export default function App() {
         <div
           style={{
             position: 'fixed', inset: 0, zIndex: 1200,
-            background: 'rgba(61,59,56,0.88)',
-            backdropFilter: 'blur(4px)',
+            background: 'rgba(0,0,0,0.88)',
+            backdropFilter: 'blur(8px)',
             display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '16px',
           }}
           onClick={() => setSelectedProject(null)}
@@ -887,10 +888,10 @@ export default function App() {
           <div
             onClick={(e) => e.stopPropagation()}
             style={{
-              background: 'var(--color-parchment)',
-              border: `3px solid ${rarityStyle(selectedProject.rarity).borderColor}`,
-              boxShadow: '6px 6px 0 var(--color-stone-ink)',
-              width: '100%', maxWidth: '600px',
+              background: 'var(--mc-surface)',
+              border: `1px solid ${rarityStyle(selectedProject.rarity).borderColor}`,
+              boxShadow: `0 0 40px rgba(0,0,0,0.8), 0 0 24px ${rarityStyle(selectedProject.rarity).borderColor}22`,
+              width: '100%', maxWidth: '620px',
               maxHeight: '88vh', overflowY: 'auto',
               padding: '0',
               clipPath: 'polygon(10px 0, calc(100% - 10px) 0, 100% 10px, 100% calc(100% - 10px), calc(100% - 10px) 100%, 10px 100%, 0 calc(100% - 10px), 0 10px)',
@@ -912,15 +913,15 @@ export default function App() {
                 <button
                   onClick={() => setSelectedProject(null)}
                   style={{
-                    width: '36px', height: '36px', border: '2px solid var(--color-stone-ink)',
-                    background: 'var(--color-parchment)', color: 'var(--color-stone-ink)',
+                    width: '36px', height: '36px', border: '1px solid var(--mc-border)',
+                    background: 'var(--mc-bg)', color: 'var(--mc-text-2)',
                     cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center',
                     fontSize: '1rem',
                     clipPath: 'polygon(4px 0, calc(100% - 4px) 0, 100% 4px, 100% calc(100% - 4px), calc(100% - 4px) 100%, 4px 100%, 0 calc(100% - 4px), 0 4px)',
                   }}
                   aria-label="Close project details"
                 >
-                                    <PixelIcon name="close" />
+                  <PixelIcon name="close" />
                 </button>
               </div>
 
@@ -928,7 +929,7 @@ export default function App() {
                 {selectedProject.badge}
               </span>
 
-              <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.4rem', fontWeight: 600, color: 'var(--color-stone-ink)', margin: '0 0 12px' }}>
+              <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.4rem', fontWeight: 600, color: 'var(--mc-text)', margin: '0 0 12px' }}>
                 {selectedProject.title}
               </h3>
 
@@ -936,9 +937,9 @@ export default function App() {
                 {selectedProject.tech.map(t => <span key={t} className="pixel-tag pixel-tag-grass">{t}</span>)}
               </div>
 
-              <div style={{ height: '2px', background: 'var(--color-stone-muted)', marginBottom: '16px', opacity: 0.3 }} />
+              <div style={{ height: '1px', background: 'var(--mc-border)', marginBottom: '16px' }} />
 
-              <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.95rem', lineHeight: 1.7, color: 'var(--color-stone-ink)', marginBottom: '16px' }}>
+              <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.95rem', lineHeight: 1.7, color: 'var(--mc-text-2)', marginBottom: '16px' }}>
                 {selectedProject.desc}
               </p>
 
@@ -979,7 +980,8 @@ export default function App() {
           onClick={() => setLightboxImage(null)}
           style={{
             position: 'fixed', inset: 0, zIndex: 1200,
-            background: 'rgba(61,59,56,0.94)',
+            background: 'rgba(0,0,0,0.94)',
+            backdropFilter: 'blur(6px)',
             display: 'flex', alignItems: 'center', justifyContent: 'center',
             padding: '16px', cursor: 'zoom-out',
           }}
@@ -989,14 +991,14 @@ export default function App() {
             style={{
               position: 'absolute', top: '20px', right: '20px',
               width: '40px', height: '40px',
-              background: 'var(--color-parchment)', border: '2px solid var(--color-stone-ink)',
-              color: 'var(--color-stone-ink)', cursor: 'pointer',
+              background: 'var(--mc-surface-2)', border: '1px solid var(--mc-border-hover)',
+              color: 'var(--mc-text-2)', cursor: 'pointer',
               display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1rem',
               clipPath: 'polygon(4px 0, calc(100% - 4px) 0, 100% 4px, 100% calc(100% - 4px), calc(100% - 4px) 100%, 4px 100%, 0 calc(100% - 4px), 0 4px)',
             }}
             aria-label="Close image lightbox"
           >
-                        <PixelIcon name="close" />
+            <PixelIcon name="close" />
           </button>
 
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', maxWidth: '90vw', maxHeight: '85vh' }}>
@@ -1006,15 +1008,15 @@ export default function App() {
               style={{
                 maxWidth: '100%', maxHeight: '75vh',
                 objectFit: 'contain',
-                border: '3px solid var(--color-stone-muted)',
-                boxShadow: '6px 6px 0 var(--color-stone-ink)',
+                border: '1px solid var(--mc-border-hover)',
+                boxShadow: '0 0 40px rgba(0,0,0,0.8), 0 0 16px rgba(98,184,20,0.15)',
                 clipPath: 'polygon(6px 0, calc(100% - 6px) 0, 100% 6px, 100% calc(100% - 6px), calc(100% - 6px) 100%, 6px 100%, 0 calc(100% - 6px), 0 6px)',
               }}
             />
             <p style={{
               marginTop: '12px', fontFamily: 'var(--font-mono)',
               fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.1em',
-              textTransform: 'uppercase', color: 'var(--color-parchment)', opacity: 0.7,
+              textTransform: 'uppercase', color: 'var(--mc-text-muted)',
             }}>
               {lightboxImage.alt}
             </p>
