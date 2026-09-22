@@ -6,20 +6,20 @@
 
 ---
 
-## 🔗 Live Site
+## Live Site
 
 **[Zyron Neil's Personal Portfolio](https://personalporfolioneil.netlify.app/)** — hosted on GitHub Pages & Netlify
 
 ---
 
-## ✨ Features (v3.2.0 Minecraft.net UI/UX Overhaul)
+## Features (v3.2.0 Minecraft.net UI/UX Overhaul)
 
-- **📦 3D Animated Minecraft Chest Hero** — Interactive 3D CSS chest scene in the hero section:
+- ** 3D Animated Minecraft Chest Hero** — Interactive 3D CSS chest scene in the hero section:
   - **Animated Open Lid**: Rotates back `-108deg` via 3D CSS `rotateX` on page load.
   - **Layered Emerge Effect**: Photo stands inside the chest with Z-index masking (`z:20` chest front > `z:10` photo > `z:1` interior back wall).
   - **Floating Particles**: 5 animated sparkle particles (Gold, Emerald, Diamond Blue) floating upward.
   - **GSAP Scene Float**: Smooth floating movement for the entire chest scene.
-- **🟩 Official Minecraft.net Palette** — Sleek dark theme featuring near-black canvas (`#0f0f0f` / `#141414`), dark card surfaces (`#1c1c1c`), vibrant MC Green (`#62B814`), MC Gold (`#FFC42B`), and MC Diamond Blue (`#70DFFF`).
+- ** Official Minecraft.net Palette** — Sleek dark theme featuring near-black canvas (`#0f0f0f` / `#141414`), dark card surfaces (`#1c1c1c`), vibrant MC Green (`#62B814`), MC Gold (`#FFC42B`), and MC Diamond Blue (`#70DFFF`).
 - **🔮 Glass-Dark Sticky Header** — Translucent dark navigation bar with `backdrop-filter: blur(16px)`, pixel block ZN logo, MC Green active underline indicators, and responsive mobile overlay.
 - **⚡ Chromatic Pixel Glitch Title** — Dual-layer clip-rect glitch animation on the hero headline with multi-hue text-shadow cycling in MC palette colors (`Pixelify Sans`).
 - **🎮 Inventory Project Grid** — Signature slot hotbar view with rarity-based color borders & glow effects:
