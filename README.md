@@ -20,21 +20,21 @@
   - **Floating Particles**: 5 animated sparkle particles (Gold, Emerald, Diamond Blue) floating upward.
   - **GSAP Scene Float**: Smooth floating movement for the entire chest scene.
 - ** Official Minecraft.net Palette** — Sleek dark theme featuring near-black canvas (`#0f0f0f` / `#141414`), dark card surfaces (`#1c1c1c`), vibrant MC Green (`#62B814`), MC Gold (`#FFC42B`), and MC Diamond Blue (`#70DFFF`).
-- **🔮 Glass-Dark Sticky Header** — Translucent dark navigation bar with `backdrop-filter: blur(16px)`, pixel block ZN logo, MC Green active underline indicators, and responsive mobile overlay.
-- **⚡ Chromatic Pixel Glitch Title** — Dual-layer clip-rect glitch animation on the hero headline with multi-hue text-shadow cycling in MC palette colors (`Pixelify Sans`).
-- **🎮 Inventory Project Grid** — Signature slot hotbar view with rarity-based color borders & glow effects:
-  - 👑 **Gold Border & Badge (`#FFC42B`)**: Featured Core Projects
-  - 🪨 **Stone Border & Badge (`#878787`)**: Full-Stack / Standard Projects
-  - 💎 **Diamond Blue Border & Badge (`#70DFFF`)**: Experimental / Labs
-- **🎯 Hotbar Skills Arsenal** — Stepped pixel slots displaying technical proficiency across HTML, CSS, JS, React, Python, Java, C++, MySQL, Git, and Figma with green glow hover states.
-- **🌿 Minecraft Timeline Spine** — Vertical journey cards with stepped pixel corners and green-to-blue gradient connector path.
-- **🖼️ Case Study Modals & Dark Lightbox** — Dark-themed interactive pixel-corner popups with deep dive insights and full-screen image lightbox.
-- **📱 Responsive Mobile Navigation** — Mobile drawer menu with pixel art icons, dark backdrop blur, and green action highlights.
-- **☄️ Matter.js Anti-Gravity Easter Egg** — Click logo 3 times to trigger interactive zero-gravity physics!
+- ** Glass-Dark Sticky Header** — Translucent dark navigation bar with `backdrop-filter: blur(16px)`, pixel block ZN logo, MC Green active underline indicators, and responsive mobile overlay.
+- ** Chromatic Pixel Glitch Title** — Dual-layer clip-rect glitch animation on the hero headline with multi-hue text-shadow cycling in MC palette colors (`Pixelify Sans`).
+- ** Inventory Project Grid** — Signature slot hotbar view with rarity-based color borders & glow effects:
+  -  **Gold Border & Badge (`#FFC42B`)**: Featured Core Projects
+  -  **Stone Border & Badge (`#878787`)**: Full-Stack / Standard Projects
+  -  **Diamond Blue Border & Badge (`#70DFFF`)**: Experimental / Labs
+- ** Hotbar Skills Arsenal** — Stepped pixel slots displaying technical proficiency across HTML, CSS, JS, React, Python, Java, C++, MySQL, Git, and Figma with green glow hover states.
+- ** Minecraft Timeline Spine** — Vertical journey cards with stepped pixel corners and green-to-blue gradient connector path.
+- **Case Study Modals & Dark Lightbox** — Dark-themed interactive pixel-corner popups with deep dive insights and full-screen image lightbox.
+- ** Responsive Mobile Navigation** — Mobile drawer menu with pixel art icons, dark backdrop blur, and green action highlights.
+- ** Matter.js Anti-Gravity Easter Egg** — Click logo 3 times to trigger interactive zero-gravity physics!
 
 ---
 
-## 🛠️ Tech Stack & Typography
+##  Tech Stack & Typography
 
 | Layer | Technology |
 |---|---|
